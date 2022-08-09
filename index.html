@@ -13,9 +13,13 @@
 
         var gameInstance = UnityLoader.instantiate("gameContainer", "Build/test_debug.json", {onProgress: UnityProgress});
         
-           function mute(value)
+           function mute()
         {
-            gameInstance.SendMessage("SoundManager","OnApplicationFocus",value);
+            gameInstance.SendMessage("SoundManager","MusicOff");
+        }
+         function check()
+        {
+            gameInstance.SendMessage("SoundManager","checkAndsetMusicAndSnd");
         }
     </script>
 </head>
@@ -23,7 +27,8 @@
 <div class="webgl-content">
     <div id="gameContainer" style="width: 1090px; height: 1920px"></div>
     <p>Click the following button to see the function in action</p>  
-<input type = "button" onclick = "mute(false)" value = "Display"> 
+<input type = "button" onclick = "mute()" value = "Display"> 
+    <input type = "button" onclick = "check()" value = "Display"> 
 </div>
 
 </body>
