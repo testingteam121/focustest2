@@ -12,11 +12,18 @@
                 UnityLoader.compatibilityCheck=function(e,t,r){t();};
 
         var gameInstance = UnityLoader.instantiate("gameContainer", "Build/test_debug.json", {onProgress: UnityProgress});
+        
+           function mute()
+        {
+            gameInstance.SendMessage("SoundManager","OnApplicationFocus",false);
+        }
     </script>
 </head>
 <body>
 <div class="webgl-content">
     <div id="gameContainer" style="width: 1090px; height: 1920px"></div>
+    <p>Click the following button to see the function in action</p>  
+<input type = "button" onclick = "mute()" value = "Display"> 
 </div>
 
 <script src="TemplateData/responsive.javascript"></script>
